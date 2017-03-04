@@ -28,7 +28,7 @@ class App extends Component {
           <input type="text" value={this.state.name} onChange={this.onTyping}/>
         </form>
         <p className="App-intro">
-          Hello, world!
+          Hello, {this.state.name}
         </p>
 
       </div>
