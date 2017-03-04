@@ -4,6 +4,18 @@ import './App.css';
 
 class App extends Component {
 
+  constructor (props) {
+    super (props);
+
+    this.state = {
+      name
+    };
+  }
+
+  onTyping = (event) => {
+    this.setState({ name: event.target.value });
+  }
+
   render() {
     return (
       <div className="App">
@@ -13,7 +25,7 @@ class App extends Component {
         </div>
         <br/>
         <form>
-          <input type="text" />
+          <input type="text" value={this.state.name} onChange={this.onTyping}/>
         </form>
         <p className="App-intro">
           Hello, world!
