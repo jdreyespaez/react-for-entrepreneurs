@@ -22,8 +22,23 @@ class App extends Component {
     };
   }
 
-  render() {
+  setSearchQuery = (result) => {
+    this.setState({ result });
+  }
 
+  fetchSearchQuery = (result) => {
+    fetch(`${PATH_BASE}${PATH_SEARCH}${PARAM_SEARCH}${DEFAULT_QUERY}`)
+      .then(response => response.json())
+      .then(result => this.setSearchQuery(result));
+  }
+
+  componentDidMount() {
+    const { query } = this.state;
+    this.fetchSearchQuery(query);
+  }
+
+  render() {
+    
     return (
       <div className="App">
         <div className="App-header">
