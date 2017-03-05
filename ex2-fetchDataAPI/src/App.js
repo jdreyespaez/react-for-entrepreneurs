@@ -2,13 +2,23 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+const DEFAULT_QUERY ='react';
+
+const PATH_BASE =  'http://it-ebooks-api.info/v1';
+const PATH_SEARCH = '/search/';
+const PARAM_SEARCH = '{query}';
+
+// `${PATH_BASE}${PATH_SEARCH}${PARAM_SEARCH}${DEFAULT_QUERY}`
+// https://hn.it-ebooks-api.info/v1/search/react
+
 class App extends Component {
 
   constructor (props) {
     super (props);
 
     this.state = {
-
+      result: null,
+      query: DEFAULT_QUERY,
     };
   }
 
