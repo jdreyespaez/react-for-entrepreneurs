@@ -44,7 +44,7 @@ class App extends Component {
   }
 
   render() {
-
+    const { query, result } = this.state;
     return (
       <div className="App">
         <div className="App-header">
@@ -52,9 +52,25 @@ class App extends Component {
         <h2>Welcome to React</h2>
         </div>
         <br/>
+        { result ? <Table list = {result.Books} pattern={query} /> : null }
       </div>
     );
   }
 }
+
+const Table = ({ list }) =>
+  <div className="table">
+    { list.map((item) =>
+      <div key={item.ID} className="table-row">
+        {item.Title}
+        <span style={{ width: '50%' }}>
+          <img src={item.Image}/>
+        </span>
+        <span style={{ width: '50%' }}>
+          {item.Description}
+        </span>
+      </div>
+    )}
+  </div>
 
 export default App;
