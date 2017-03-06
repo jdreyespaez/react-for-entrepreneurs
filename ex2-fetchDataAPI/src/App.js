@@ -28,8 +28,14 @@ class App extends Component {
 
   fetchSearchQuery = (result) => {
     fetch(`${PATH_BASE}${PATH_SEARCH}${PARAM_SEARCH}${DEFAULT_QUERY}`)
-      .then(response => response.json())
-      .then(result => this.setSearchQuery(result));
+      .then(response => {
+        console.log()
+        return response.json()
+      })
+      .then(result => {
+        console.log(result)
+        this.setSearchQuery(result)
+      });
   }
 
   componentDidMount() {
@@ -38,7 +44,7 @@ class App extends Component {
   }
 
   render() {
-    
+
     return (
       <div className="App">
         <div className="App-header">
