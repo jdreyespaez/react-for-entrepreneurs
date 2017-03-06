@@ -29,7 +29,7 @@ class App extends Component {
   fetchSearchQuery = (result) => {
     fetch(`${PATH_BASE}${PATH_SEARCH}${PARAM_SEARCH}${DEFAULT_QUERY}`)
       .then(response => {
-        console.log()
+        console.log(response)
         return response.json()
       })
       .then(result => {
