@@ -52,25 +52,35 @@ class App extends Component {
         <h2>Welcome to React</h2>
         </div>
         <br/>
-        { result ? <Table list = {result.Books} pattern={query} /> : null }
+        { result ? <Table list = {Book} /> : null }
       </div>
     );
   }
 }
 
-const Table = ({ list }) =>
-  <div className="table">
-    { list.map((item) =>
-      <div key={item.ID} className="table-row">
-        {item.Title}
-        <span style={{ width: '50%' }}>
-          <img src={item.Image}/>
-        </span>
-        <span style={{ width: '50%' }}>
-          {item.Description}
-        </span>
-      </div>
-    )}
-  </div>
+class Book extends Component {
+  render () {
+  return (
+  const Table = ({ list }) =>
+    <div className="table">
+      { list.map((result.Books) =>
+        <div key={result.Boooks.ID} className="table-row">
+          <span style={{ width: '30%' }}>
+            {result.Boooks.Title}
+          </span>
+          <span style={{ width: '40%' }}>
+            <img src={result.Boooks.Image}/>
+          </span>
+          <span style={{ width: '30%' }}>
+            {result.Boooks.Description}
+          </span>
+        </div>
+      )}
+    </div>
+    );
+  }
+}
+
+
 
 export default App;
