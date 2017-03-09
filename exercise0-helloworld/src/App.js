@@ -8,10 +8,10 @@ class Toggle extends Component {
     this.state = {isToggleOn: true};
 
     // The binding thing I don't understand.
-    this.handleClick = this.handleClick.bind(this);
+    //this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick () {
+  handleClick = () => {
     this.setState(prevState => ({
       isToggleOn: !prevState.isToggleOn
     }));
