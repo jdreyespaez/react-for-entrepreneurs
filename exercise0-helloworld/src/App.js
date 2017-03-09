@@ -2,38 +2,28 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
-
+class Toggle extends Component {
   constructor (props) {
-    super (props);
+    super(props);
+    this.state = {isToggleOn: true};
 
-    this.state = {
-      name
-    };
+    // The binding thing I don't understand.
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  onTyping = (event) => {
-    this.setState({ name: event.target.value });
+  handleClick () {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }));
   }
 
-  render() {
+  render () {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        <h2>Welcome to React</h2>
-        </div>
-        <br/>
-        <form>
-          <input type="text" value={this.state.name} onChange={this.onTyping}/>
-        </form>
-        <p className="App-intro">
-          Hello, {this.state.name}
-        </p>
-
-      </div>
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      </button>
     );
   }
 }
 
-export default App;
+export default Toggle;
