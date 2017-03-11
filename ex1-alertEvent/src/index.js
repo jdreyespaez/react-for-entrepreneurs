@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import Essay from './Essay';
 import './index.css';
 
 ReactDOM.render(
   <App />,
-  document.getElementById('root')
+  document.getElementById('app')
+);
+
+ReactDOM.render(
+  <Essay />,
+  document.getElementById('essay')
 );
