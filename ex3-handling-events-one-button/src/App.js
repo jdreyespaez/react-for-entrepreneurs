@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
 
   constructor(props) {
-    super (props);
-
-    this.state = {isToggleOn: true}
+    super(props);
+    this.state = {isToggleOn: true};
   }
 
   handleClick = () => {
@@ -19,7 +17,7 @@ class App extends Component {
   render() {
     return (
       <button onClick={this.handleClick}>
-        {this.state.isToggleOn ? 'ON' : 'OFF'}
+        {this.state.isToggleOn ? 'Apagar' : 'Prender'}
       </button>
     );
   }
